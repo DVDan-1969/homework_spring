@@ -8,7 +8,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/employees")
 public class EmployeeController {
-    private  EmployeeService service;
+    private EmployeeService service;
+
     public EmployeeController(EmployeeService service) {
         this.service = service;
     }
@@ -19,7 +20,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/{id}")
-    public Employee getById(@PathVariable Long id){
+    public Employee getById(@PathVariable Long id) {
         return service.getById(id);
     }
 
@@ -34,9 +35,9 @@ public class EmployeeController {
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping ("/{id}")
-        public ResponseEntity<Employee> update(@PathVariable Long id, @RequestBody Employee employee) {
-        Employee updatedEmployee = service.update(id,employee);
+    @PutMapping("/{id}")
+    public ResponseEntity<Employee> update(@PathVariable Long id, @RequestBody Employee employee) {
+        Employee updatedEmployee = service.update(id, employee);
         return ResponseEntity.ok(updatedEmployee);
     }
 

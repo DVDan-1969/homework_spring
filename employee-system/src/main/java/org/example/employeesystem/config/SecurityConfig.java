@@ -24,21 +24,22 @@ public class SecurityConfig {
                         .password("admin123")
                         .roles("ADMIN")
                         .build();
-        UserDetails manager=
+        UserDetails manager =
                 User.withDefaultPasswordEncoder()
                         .username("manager")
                         .password("manager123")
                         .roles("MANAGER")
                         .build();
-        UserDetails employee=
+        UserDetails employee =
                 User.withDefaultPasswordEncoder()
                         .username("employee")
                         .password("employee123")
                         .roles("EMPLOYEE")
                         .build();
-        return new InMemoryUserDetailsManager(admin,manager,employee);
+        return new InMemoryUserDetailsManager(admin, manager, employee);
 
     }
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http)
             throws Exception {
@@ -71,7 +72,8 @@ public class SecurityConfig {
                         .defaultSuccessUrl("/employees", true)
                         .failureUrl("/login?error")
                         .permitAll()
-                ).httpBasic(httpBasic -> {});
+                ).httpBasic(httpBasic -> {
+                });
         ;
         return http.build();
     }

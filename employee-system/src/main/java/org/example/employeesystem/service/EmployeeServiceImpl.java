@@ -32,7 +32,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Employee update(Long id ,Employee employee) {
+    public Employee update(Long id, Employee employee) {
         return repository.save(employee);
     }
 

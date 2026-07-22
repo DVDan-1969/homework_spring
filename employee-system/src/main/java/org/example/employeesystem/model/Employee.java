@@ -14,13 +14,15 @@ public class Employee {
     private String department;
     private Double salary;
 
-    public Employee() {}
+    public Employee() {
+    }
+
     public Employee(String firstName, String lastName, String email, String department, Double salary) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.department = department;
-        this.salary =salary;
+        this.salary = salary;
     }
 
     public Long getId() {
@@ -43,7 +45,9 @@ public class Employee {
         return lastName;
     }
 
-    public void setLastName(String lastName) {this.lastName=lastName;}
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
     public String getEmail() {
         return email;
@@ -65,8 +69,8 @@ public class Employee {
         return salary;
     }
 
-    public void setSalary(Double salary) {this.salary = salary;}
-
-
+    public void setSalary(Double salary) {
+        this.salary = salary;
+    }
 
 }
